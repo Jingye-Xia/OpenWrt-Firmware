@@ -12,6 +12,7 @@ name: Build Lienol OpenWrt
 
 on:
   repository_dispatch:
+    types: lienol
   workflow_dispatch:
     inputs:
       ssh:
