@@ -12,7 +12,7 @@ name: Build Lean OpenWrt
 
 on:
   repository_dispatch:
-    types: lean
+    types: Lean
   workflow_dispatch:
     inputs:
       ssh:
