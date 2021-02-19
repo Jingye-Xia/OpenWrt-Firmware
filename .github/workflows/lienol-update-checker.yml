@@ -49,12 +49,12 @@ jobs:
       uses: actions/cache@v2
       with:
         path: .helloworld
-        key: HEAD-${{ steps.gethelloworldHash.outputs.commitHash }}
+        key: HEAD-${{ steps.gethelloworldHash.outputs.commitHash }}-lienol
 
     - name: Save New Helloworld Commit Hash
       if: steps.cachehelloworldHash.outputs.cache-hit != 'true'
       run: |
-        echo ${{ steps.gethelloworldHash.outputs.commitHash }} | tee .commithelloworldHash
+        echo ${{ steps.gethelloworldHash.outputs.commitHash }}-lienol | tee .commithelloworldHash
 
     - name: Get PassWall Commit Hash
       id: getpasswallHash
@@ -68,12 +68,12 @@ jobs:
       uses: actions/cache@v2
       with:
         path: .passwall
-        key: HEAD-${{ steps.getpasswallHash.outputs.commitHash }}
+        key: HEAD-${{ steps.getpasswallHash.outputs.commitHash }}-lienol
 
     - name: Save New PassWall Commit Hash
       if: steps.cachepasswallHash.outputs.cache-hit != 'true'
       run: |
-        echo ${{ steps.getpasswallHash.outputs.commitHash }} | tee .commitpasswallHash
+        echo ${{ steps.getpasswallHash.outputs.commitHash }}-lienol | tee .commitpasswallHash
 
     - name: Get Lienol Commit Hash
       id: getlienolHash
@@ -87,12 +87,12 @@ jobs:
       uses: actions/cache@v2
       with:
         path: .lienol
-        key: HEAD-${{ steps.getlienolHash.outputs.commitHash }}
+        key: HEAD-${{ steps.getlienolHash.outputs.commitHash }}-lienol
 
     - name: Save New Lienol Commit Hash
       if: steps.cachelienolHash.outputs.cache-hit != 'true'
       run: |
-        echo ${{ steps.getlienolHash.outputs.commitHash }} | tee .commitlienolHash
+        echo ${{ steps.getlienolHash.outputs.commitHash }}-lienol | tee .commitlienolHash
 
     - name: Trigger build
       if: steps.cachelienolHash.outputs.cache-hit != 'true' || steps.cachepasswallHash.outputs.cache-hit != 'true' || steps.cachehelloworldHash.outputs.cache-hit != 'true'
