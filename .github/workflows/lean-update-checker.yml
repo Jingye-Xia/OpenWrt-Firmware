@@ -49,12 +49,12 @@ jobs:
       uses: actions/cache@v2
       with:
         path: .helloworld
-        key: HEAD-${{ steps.gethelloworldHash.outputs.commitHash }}
+        key: HEAD-${{ steps.gethelloworldHash.outputs.commitHash }}-lean
 
     - name: Save New Helloworld Commit Hash
       if: steps.cachehelloworldHash.outputs.cache-hit != 'true'
       run: |
-        echo ${{ steps.gethelloworldHash.outputs.commitHash }} | tee .commithelloworldHash
+        echo ${{ steps.gethelloworldHash.outputs.commitHash }}-lean | tee .commithelloworldHash
 
     - name: Get PassWall Commit Hash
       id: getpasswallHash
@@ -68,12 +68,12 @@ jobs:
       uses: actions/cache@v2
       with:
         path: .passwall
-        key: HEAD-${{ steps.getpasswallHash.outputs.commitHash }}
+        key: HEAD-${{ steps.getpasswallHash.outputs.commitHash }}-lean
 
     - name: Save New PassWall Commit Hash
       if: steps.cachepasswallHash.outputs.cache-hit != 'true'
       run: |
-        echo ${{ steps.getpasswallHash.outputs.commitHash }} | tee .commitpasswallHash
+        echo ${{ steps.getpasswallHash.outputs.commitHash }}-lean | tee .commitpasswallHash
 
     - name: Get Lean Commit Hash
       id: getleanHash
@@ -87,12 +87,12 @@ jobs:
       uses: actions/cache@v2
       with:
         path: .lean
-        key: HEAD-${{ steps.getleanHash.outputs.commitHash }}
+        key: HEAD-${{ steps.getleanHash.outputs.commitHash }}-lean
 
     - name: Save New Lean Commit Hash
       if: steps.cacheleanHash.outputs.cache-hit != 'true'
       run: |
-        echo ${{ steps.getleanHash.outputs.commitHash }} | tee .commitleanHash
+        echo ${{ steps.getleanHash.outputs.commitHash }}-lean | tee .commitleanHash
 
     - name: Trigger build
       if: steps.cacheleanHash.outputs.cache-hit != 'true' || steps.cachepasswallHash.outputs.cache-hit != 'true' || steps.cachehelloworldHash.outputs.cache-hit != 'true'
