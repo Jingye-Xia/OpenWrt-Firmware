@@ -13,7 +13,7 @@ name: Lienol Update Checker
 
 env:
   REPO_URL: https://github.com/Lienol/openwrt
-  REPO_BRANCH: 21.02
+  REPO_BRANCH: 19.07
   PASSWALL_REPO_URL: https://github.com/xiaorouji/openwrt-passwall
   PASSWALL_REPO_BRANCH: main
   HELLOWORLD_REPO_URL: https://github.com/fw876/helloworld
