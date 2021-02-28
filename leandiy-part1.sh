@@ -18,3 +18,4 @@
 sed -i '$a src-git helloworld https://github.com/fw876/helloworld' feeds.conf.default
 sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default
 sed -i '$a src-git vssr https://github.com/jerrykuku/luci-app-vssr' feeds.conf.default
+sed -i '$a src-git maxminddb https://github.com/jerrykuku/lua-maxminddb' feeds.conf.default
